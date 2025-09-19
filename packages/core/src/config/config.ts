@@ -33,6 +33,7 @@ import {
 import { logCliConfiguration, logIdeConnection } from '../telemetry/loggers.js';
 import { IdeConnectionEvent, IdeConnectionType } from '../telemetry/types.js';
 import { EditTool } from '../tools/edit.js';
+import { ExtractTool } from '../tools/extract.js';
 import { GlobTool } from '../tools/glob.js';
 import { GrepTool } from '../tools/grep.js';
 import { LSTool } from '../tools/ls.js';
@@ -980,6 +981,7 @@ export class Config {
     registerCoreTool(TaskTool, this);
     registerCoreTool(LSTool, this);
     registerCoreTool(ReadFileTool, this);
+    registerCoreTool(ExtractTool, this);
 
     if (this.getUseRipgrep()) {
       registerCoreTool(RipGrepTool, this);
